@@ -38,8 +38,7 @@
                 FontAttributes="Bold"
                 BackgroundColor="CornflowerBlue"
                 TextColor="WhiteSmoke"
-                WidthRequest="250"
-                MinimumWidthRequest="300"
+                MinimumWidthRequest="150"
                 CornerRadius="18"
                 FontSize="Medium"/>
             <ListView x:Name="listView" Margin="20" ItemsSource="{Binding Contacto}"   >
