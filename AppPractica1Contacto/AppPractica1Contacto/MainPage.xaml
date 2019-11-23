@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppPractica1Contacto.MainPage">
+
+    <StackLayout
+        Padding="15,30,15,15">
+        <!-- Place new controls here -->
+        <Label Text="Información de contactos" 
+               FontSize="Subtitle"  
+               HorizontalOptions="CenterAndExpand" 
+               VerticalOptions="StartAndExpand"  
+               TextColor="SteelBlue"/>
+        <Label Text="Nombre:" 
+               VerticalTextAlignment="Center" 
+               HorizontalOptions="CenterAndExpand" 
+               TextColor="SteelBlue" />
+        <Entry x:Name = "txtNombre" 
+               VerticalOptions="StartAndExpand" 
+               TextColor="SteelBlue" />
+        <Label Text="Apellido: " 
+               VerticalTextAlignment="Center" 
+               HorizontalOptions="CenterAndExpand" 
+               TextColor="SteelBlue" />
+        <Entry x:Name ="txtApellido" 
+               VerticalOptions="StartAndExpand" 
+               TextColor="SteelBlue" />
+        <Label Text="Telefono:" 
+               VerticalTextAlignment="Center" 
+               HorizontalOptions="CenterAndExpand" 
+               TextColor="SteelBlue" />
+        <Entry x:Name ="txtTelefono" VerticalOptions="StartAndExpand"  TextColor="SteelBlue"
+               Keyboard="Numeric"/>
+        <Button x:Name="btnAddContacto" Clicked="btnAddContacto_Clicked" Text="Agregar Contactos"
+                FontAttributes="Bold"
+                BackgroundColor="CornflowerBlue"
+                TextColor="WhiteSmoke"
+                WidthRequest="250"
+                MinimumWidthRequest="300"
+                CornerRadius="18"
+                FontSize="Medium"/>
+            <ListView x:Name="listView" Margin="20" ItemsSource="{Binding Contacto}"   >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+                             <Label Text="{Binding Nombre}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" TextColor="SteelBlue" ></Label>
+                            <Label Text="{Binding Apellido}" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
+                            <Label Text="{Binding Sexo}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" ></Label>
+                            <Label Text="{Binding Telefono}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" ></Label>
+                           
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>
